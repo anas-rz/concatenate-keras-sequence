@@ -18,7 +18,6 @@ class ConcatenateSequence(tf.keras.utils.Sequence):
         part = np.digitize(idx, self.bins)
         if part != 0:
             part_idx = idx - self.bins[part - 1]
-            print(self.bins[part - 1])
         else:
             part_idx = idx
         return self.sequences[part][part_idx]
